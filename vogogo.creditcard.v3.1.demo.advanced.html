@@ -13,6 +13,11 @@
 
     <script>
 
+        $(window).on('message', function (e) {
+            console.log('GOT MESSAGE')
+        });
+
+
         $('button').on('click', function (e) {
             e.preventDefault();
 
