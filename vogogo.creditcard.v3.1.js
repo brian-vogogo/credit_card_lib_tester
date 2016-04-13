@@ -2052,6 +2052,12 @@ var widget = $.widget;
 }));
 
 /*
+ * Source: https://github.com/blueimp/jQuery-File-Upload/blob/eb985ea473e021ffe714096e0f03f5a3f56048d4/js/cors/jquery.postmessage-transport.js
+ *
+ * Changes: added IE11 hack to strip :443 and :80 from target around line 73
+ *
+ */
+/*
  * jQuery postMessage Transport Plugin
  * https://github.com/blueimp/jQuery-File-Upload
  *
@@ -2117,6 +2123,8 @@ var widget = $.widget;
                 loc = $('<a>').prop('href', options.postMessage)[0],
                 target = loc.protocol + '//' + loc.host,
                 xhrUpload = options.xhr().upload;
+            // IE11: strip the default port (:443, :80) off the URL to match other browsers
+            target = target.replace(/(:443)|(:80)$/, '');
             return {
                 send: function (_, completeCallback) {
                     counter += 1;

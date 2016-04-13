@@ -2,7 +2,7 @@
 <head>
     <title>Vogogo Credit Card Advanced Demo</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="vogogo.creditcard.v3.1.demo.css">
+    <link rel="stylesheet" href="/vogogo.creditcard.v3.1.demo.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="vogogo.creditcard.v3.1.min.js"></script>
 </head>
@@ -13,16 +13,15 @@
 
     <script>
 
-        $(window).on('message', function (e) {
-            console.log('GOT MESSAGE')
-        });
-
-
         $('button').on('click', function (e) {
             e.preventDefault();
 
             // Find your Client Id at https://app.vogogo.com/settings/api_settings
             Vogogo.setClientId('clientid');
+
+            // This is only used for local development within Vogogo.
+            // Remove before providing to the merchant.
+            // Vogogo.setUriDomain('http://api.lvh.me:3000');
 
             // Enable when troubleshooting
             Vogogo.setDebug();
@@ -34,7 +33,7 @@
 
             // Card details
             var card = {
-                customer_id: '41a76fcd-4635-4388-9f50-9cfdc0ca0fae',
+                customer_id: '907d6f47-e38c-4bb0-bebc-4fae58043a43',
                 name: 'Mary Moore',
                 number: '4111 1111 1111 1111',
                 expiry_date_month: '08',
