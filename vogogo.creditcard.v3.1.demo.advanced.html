@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Vogogo Credit Card Advanced Demo</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/vogogo.creditcard.v3.1.demo.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="/vogogo.creditcard.v3.1.min.js"></script>
+</head>
+<body>
+
+    <input type="file" name="photo" accept="image/*"> <br/>
+    <button>Add Card</button>
+
+    <script>
+
+        $('button').on('click', function (e) {
+            e.preventDefault();
+
+            // Find your Client Id at https://app.vogogo.com/settings/api_settings
+            Vogogo.setClientId('clientid');
+
+            // This is only used for local development within Vogogo.
+            // Remove before providing to the merchant.
+            Vogogo.setUriDomain('http://api.lvh.me:3000');
+
+            // Enable when troubleshooting
+            Vogogo.setDebug();
+
+            // Get periodic progress updates for slow uploads
+            Vogogo.setProgress(function (data) {
+                console.log('Uploading... ' + data.percent + '%');
+            });
+
+            // Card details
+            var card = {
+                customer_id: '41a76fcd-4635-4388-9f50-9cfdc0ca0fae',
+                name: 'Mary Moore',
+                number: '4111 1111 1111 1111',
+                expiry_date_month: '08',
+                expiry_date_year: '19',
+                address_street_1: '100 Main St',
+                address_street_2: 'Lower level',
+                address_city: 'Calgary',
+                address_state: 'AB',
+                address_country: 'CA',
+                address_postal_code: 'T3A6V2',
+                photo: $('input[type=file]')[0].files[0]
+            };
+
+            // Submit card to Vogogo and retrieve a card_id
+            Vogogo.getCardId(card, function (data) {
+                if (data.error_message) {
+                    console.log(data.error_message);
+                    return;
+                }
+                console.log('Card ID: ' + data.id + ', Card number: ' + data.last4);
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Vogogo Credit Card Basic Demo</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/vogogo.creditcard.v3.1.demo.css">
+</head>
+<body>
+
+    <form action="/test/v2" method="POST" id="vogogo-form">
+
+        <input type="hidden" data-vogogo="client_id"   value="clientid">
+        <input type="hidden" data-vogogo="customer_id" value="41a76fcd-4635-4388-9f50-9cfdc0ca0fae">
+        <input type="hidden" data-vogogo="uri_domain"  value="http://api.lvh.me:3000">
+        <input type="hidden" data-vogogo="debug"       value="true">
+
+        <input type="text" data-vogogo="name"                placeholder="Name"> <br/>
+        <input type="text" data-vogogo="number"              placeholder="Card Number">
+        <input type="text" data-vogogo="expiry_date_month"   placeholder="MM">
+        <input type="text" data-vogogo="expiry_date_year"    placeholder="YY"> <br/>
+        <input type="text" data-vogogo="address_street_1"    placeholder="Address"> <br/>
+        <input type="text" data-vogogo="address_street_2"    placeholder=""> <br/>
+        <input type="text" data-vogogo="address_city"        placeholder="City">
+        <input type="text" data-vogogo="address_state"       placeholder="State"> <br/>
+        <input type="text" data-vogogo="address_country"     placeholder="Country">
+        <input type="text" data-vogogo="address_postal_code" placeholder="Zip/Postal"> <br/>
+        <input type="file" data-vogogo="photo" accept="image/*"> <br/>
+
+        <div id="vogogo-form-errors"></div>
+
+        <input type="submit" value="Add Card">
+
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="/vogogo.creditcard.v3.1.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+/*
+ * Styling for the Vogogo Credit Card Demo page
+ *
+ * This styling is not necessary to use vogogo.creditcard.v3.1.js
+ *
+ */
+
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
+
+body {
+    margin: 2em;
+}
+
+input[type=text] {
+    height: 2.75em;
+    width: 275px;
+    padding: 0.50em;
+    margin-bottom: 3px;
+}
+
+input[data-vogogo=number], #number {
+    width:175px;
+}
+
+input[data-vogogo=expiry_date_month], #expiry_date_month {
+    width:46px;
+    text-align: center;
+}
+
+input[data-vogogo=expiry_date_year], #expiry_date_year {
+    width:46px;
+    text-align: center;
+}
+
+input[data-vogogo=address_city], #address_city {
+    width: 175px;
+}
+
+input[data-vogogo=address_state], #address_state {
+    width: 96px;
+}
+
+input[data-vogogo=address_country], #address_country {
+    width: 136px;
+}
+
+input[data-vogogo=address_postal_code], #address_postal_code {
+    width: 135px;
+}
+
+#vogogo-form-errors {
+    margin-top: 0.25em;
+    margin-bottom: 1.5em;
+    color: red;
+}
+#vogogo-form-errors:empty {
+    margin-top: 0em;
+    margin-bottom: 0em;
+}
+
+input[type=file] {
+    padding-top:1em;
+}
+
+input[type=submit] {
+    height: 2.5em;
+    width: 90px;
+}
