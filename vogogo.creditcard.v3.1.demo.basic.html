@@ -8,9 +8,11 @@
 
     <form action="/yourserver/card" method="POST" id="vogogo-form">
 
-        <input type="hidden" data-vogogo="client_id"   value="clientid">
-        <input type="hidden" data-vogogo="customer_id" value="907d6f47-e38c-4bb0-bebc-4fae58043a43">
-        <input type="hidden" data-vogogo="debug"       value="true">
+        <input type="text" data-vogogo="client_id"   placeholder="Client ID"   value="live-2f7b11b8ad91547f306ca94ad28966c23b8a4e732d683aebbe101aa4db1f6f41"> <br/>
+        <input type="text" data-vogogo="customer_id" placeholder="Customer ID" > <br/>
+        <input type="text" data-vogogo="debug"       placeholder="Debug"       value="True"> <br/>
+
+         <br/>
 
         <input type="text" data-vogogo="name"                placeholder="Name"> <br/>
         <input type="text" data-vogogo="number"              placeholder="Card Number">
@@ -31,6 +33,6 @@
     </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="vogogo.creditcard.v3.1.min.js"></script>
+    <script src="https://assets.vogogo.com/vogogo.creditcard.v3.1.min.js"></script>
 </body>
 </html>
